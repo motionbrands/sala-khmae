@@ -774,9 +774,58 @@
       0%   { transform: scale(1); opacity: 0.8; }
       100% { transform: scale(1.7); opacity: 0; }
     }
+
+    /* ════ LOADER ═════════════════════════════════════════════════ */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: #0a0a08;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      transition: opacity 0.6s ease;
+    }
+    #loader.done { opacity: 0; pointer-events: none; }
+
+    #loader .loader__word {
+      font-weight: 300;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: 0.24em;
+      color: #c9a84c;
+      text-transform: uppercase;
+    }
+
+    #loader .loader__bar {
+      width: 200px;
+      height: 1px;
+      background: rgba(201,168,76,0.15);
+      overflow: hidden;
+    }
+    #loader .loader__fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, rgba(201,168,76,0.4), #c9a84c);
+      transition: width 0.25s ease-out;
+    }
+
+    #loader .loader__pct {
+      font-size: 0.64rem;
+      letter-spacing: 0.3em;
+      color: rgba(201,168,76,0.4);
+    }
   </style>
 </head>
 <body>
+
+  <!-- ══ LOADER — wartet nur auf Hero-Video, Rest streamt im Hintergrund ══ -->
+  <div id="loader" aria-hidden="true">
+    <span class="loader__word">Sāla Khmae</span>
+    <div class="loader__bar"><div class="loader__fill" id="loaderFill"></div></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
 
   <!-- ══ STICKY NAV ════════════════════════════════════════════════ -->
   <nav class="site-nav" id="siteNav" aria-label="Main navigation">
@@ -1002,6 +1051,43 @@
   </div>
 
   <script>
+    /* ── Loader: wartet NUR auf Hero-Video (nicht alle Videos) ────
+       Rest (Loop-Szenen, Whip) läuft mit preload="auto" im Hintergrund
+       weiter und ist fertig geladen bevor der User dort ankommt. */
+    (function () {
+      const loader = document.getElementById('loader');
+      const fill   = document.getElementById('loaderFill');
+      const pct    = document.getElementById('loaderPct');
+      const hero   = document.getElementById('heroVideo');
+      let done = false;
+
+      function setProgress(p) {
+        const v = Math.max(0, Math.min(100, Math.round(p)));
+        fill.style.width = v + '%';
+        pct.textContent = v + '%';
+      }
+
+      function finish() {
+        if (done) return;
+        done = true;
+        setProgress(100);
+        setTimeout(function () { loader.classList.add('done'); }, 150);
+      }
+
+      // Echter Ladefortschritt über die gepufferten Bytes des Hero-Videos
+      hero.addEventListener('progress', function () {
+        if (!hero.buffered.length || !hero.duration) return;
+        const bufferedEnd = hero.buffered.end(hero.buffered.length - 1);
+        setProgress((bufferedEnd / hero.duration) * 100);
+      });
+
+      hero.addEventListener('canplaythrough', finish);
+      hero.addEventListener('loadeddata', function () { setProgress(70); });
+
+      // Fallback: nach 4 s auf jeden Fall freigeben (langsame Verbindung)
+      setTimeout(finish, 4000);
+    })();
+
     /* ── Hero: Logo + CTA nach 5 s ──────────────────────────────── */
     (function () {
       const video = document.getElementById('heroVideo');
