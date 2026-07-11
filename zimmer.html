@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Bungalows — Sāla Khmae | Kampot, Cambodia</title>
+  <meta name="description" content="Four private open-air bungalows at Sāla Khmae, Kampot. King bed, private deck, jungle views. Book direct for the best price." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://salakhmae.com/zimmer.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sāla Khmae" />
+  <meta property="og:title" content="The Bungalows — Sāla Khmae" />
+  <meta property="og:description" content="Four private open-air bungalows surrounded by jungle. King bed, private deck, total quiet." />
+  <meta property="og:image" content="https://salakhmae.com/Bungalowinnen.png" />
+  <meta property="og:url" content="https://salakhmae.com/zimmer.html" />
+
+  <link rel="preload" as="style"
+    href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/300.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="style"
+    href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/400.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/300.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/400.css" />
+  </noscript>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="site-nav transparent" id="siteNav" aria-label="Main navigation">
+    <a class="nav__logo" href="index.html">Sāla Khmae</a>
+    <button class="nav__book" type="button"
+      onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+      Book Now
+    </button>
+  </nav>
+
+  <!-- ══ PAGE HERO ═══════════════════════════════════════════════ -->
+  <header class="page-hero">
+    <img class="page-hero__img" src="Bungalowinnen.png" alt="Interior of a Sāla Khmae bungalow at sunset" />
+    <div class="page-hero__gradient"></div>
+    <div class="page-hero__content">
+      <span class="page-hero__label">Accommodation</span>
+      <h1 class="page-hero__title">The Bungalows</h1>
+      <p class="page-hero__sub">Four private, open-air bungalows built for two — each one wrapped in jungle, with nothing between you and the quiet.</p>
+    </div>
+  </header>
+
+  <!-- ══ CONTENT ═════════════════════════════════════════════════ -->
+  <main class="page-content">
+
+    <div class="page-content__grid">
+      <img class="page-content__img" src="Bungalowinnen.png" alt="Bungalow bedroom with king bed and jungle view" />
+      <div>
+        <span class="page-content__eyebrow">Design</span>
+        <h2 class="page-content__heading">Open-Air, Built From Timber</h2>
+        <p class="page-content__text">
+          Each bungalow is built from local hardwood and thatch, designed to stay
+          cool without air conditioning running all day. Sliding doors open the
+          whole front wall onto your private deck — the jungle is never more
+          than a few steps away.
+        </p>
+        <ul class="page-content__list">
+          <li>King size bed, premium linen</li>
+          <li>Air conditioning &amp; ceiling fan</li>
+          <li>En-suite bathroom, rain shower</li>
+          <li>Private furnished deck</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-content__grid reverse">
+      <img class="page-content__img" src="zimmer2.jpg" alt="Bungalow deck with seating, opening onto the garden" />
+      <div>
+        <span class="page-content__eyebrow">Privacy</span>
+        <h2 class="page-content__heading">Four Bungalows, Never Crowded</h2>
+        <p class="page-content__text">
+          We only ever host four rooms at once — so the pool, the garden paths
+          and the breakfast table never feel busy. Book one bungalow for two,
+          or take all four and have the whole resort to your group.
+        </p>
+        <ul class="page-content__list">
+          <li>Built for two, max 4 rooms total</li>
+          <li>Daily housekeeping</li>
+          <li>Complimentary Khmer breakfast</li>
+          <li>Full resort buyout available</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- ══ BOOKING / KONTAKT ══════════════════════════════════════════ -->
+  <section class="booking" id="booking">
+    <span class="section-label">Reservations</span>
+    <h2>Book Your Stay</h2>
+    <p class="booking__sub">
+      Check real-time availability below, then reserve via form or WhatsApp.
+      No booking engines, no fees. Just us.
+    </p>
+    <p class="booking__reply">✦ We reply within 2 hours</p>
+
+    <div class="calendar" id="availabilityCalendar">
+      <div class="calendar__head">
+        <button class="calendar__nav calendar__nav--prev" type="button" aria-label="Previous month">&#8249;</button>
+        <span class="calendar__month">—</span>
+        <button class="calendar__nav calendar__nav--next" type="button" aria-label="Next month">&#8250;</button>
+      </div>
+      <div class="calendar__grid"></div>
+      <div class="calendar__legend">
+        <span><i class="open"></i> Open</span>
+        <span><i class="limited"></i> Limited</span>
+        <span><i class="full"></i> Full</span>
+      </div>
+      <p class="calendar__note"></p>
+    </div>
+
+    <form class="booking-form" id="bookingForm" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="booking" />
+      <p class="booking-form__hp"><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
+
+      <div class="booking-form__row">
+        <div>
+          <label for="bfName">Name</label>
+          <input id="bfName" name="name" type="text" required />
+        </div>
+        <div>
+          <label for="bfEmail">Email</label>
+          <input id="bfEmail" name="email" type="email" required />
+        </div>
+      </div>
+
+      <div class="booking-form__row">
+        <div>
+          <label for="bfCheckin">Check-in</label>
+          <input id="bfCheckin" name="checkin" type="date" required />
+        </div>
+        <div>
+          <label for="bfCheckout">Check-out</label>
+          <input id="bfCheckout" name="checkout" type="date" required />
+        </div>
+      </div>
+
+      <div class="booking-form__row">
+        <div>
+          <label for="bfGuests">Guests</label>
+          <select id="bfGuests" name="guests">
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+          </select>
+        </div>
+        <div>
+          <label for="bfPackage">Package</label>
+          <select id="bfPackage" name="package">
+            <option>Night</option>
+            <option>Week Escape</option>
+            <option>Full Resort</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="bfPhone">Phone (optional)</label>
+      <input id="bfPhone" name="phone" type="tel" />
+
+      <label for="bfMessage">Message</label>
+      <textarea id="bfMessage" name="message" placeholder="Anything else we should know?"></textarea>
+
+      <div class="booking-form__submit-row">
+        <button class="btn-solid" type="submit">Send Booking Request</button>
+        <a class="booking__btn-wa" id="bfWaBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L0 24l6.335-1.507A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-4.99-1.363l-.358-.213-3.758.893.952-3.656-.233-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+          Send via WhatsApp Instead
+        </a>
+      </div>
+      <p class="booking-form__status" id="bfStatus"></p>
+    </form>
+
+    <div class="booking__divider"></div>
+
+    <div class="booking__contact">
+      <a href="mailto:stay@salakhmae.com">stay@salakhmae.com</a>
+      <a href="tel:+85512345678">+855 12 345 678</a>
+      <a href="https://instagram.com/salakhmae" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://maps.google.com/?q=Kampot+Cambodia" target="_blank" rel="noopener">Find Us</a>
+    </div>
+
+    <div class="booking__location">
+      <span aria-hidden="true">📍</span>
+      Kampot Province, Cambodia
+    </div>
+
+    <div class="booking__footer">
+      S&#256;la Khmae &middot; Kampot, Cambodia &middot; &copy; 2025
+    </div>
+  </section>
+
+  <div class="float-wa" role="complementary" aria-label="Quick WhatsApp contact">
+    <div class="float-wa__bubble">Questions? We reply within 2h</div>
+    <a class="float-wa__btn"
+      href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+      target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L0 24l6.335-1.507A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-4.99-1.363l-.358-.213-3.758.893.952-3.656-.233-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+    </a>
+  </div>
+
+  <script src="common.js" defer></script>
+</body>
+</html>

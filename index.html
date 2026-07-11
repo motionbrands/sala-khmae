@@ -81,67 +81,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/400.css" />
   </noscript>
 
+  <link rel="stylesheet" href="styles.css" />
+
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; }
-
-    body {
-      background: #0a0a08;
-      color: #e8dcc8;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
-    }
-
-    /* ════ STICKY NAV ══════════════════════════════════════════════ */
-    .site-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      height: 58px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 clamp(1.2rem, 4vw, 3rem);
-      background: rgba(10,10,8,0);
-      backdrop-filter: blur(0px);
-      transition: background 0.5s ease, backdrop-filter 0.5s ease;
-      pointer-events: none;
-    }
-    .site-nav.scrolled {
-      background: rgba(10,10,8,0.88);
-      backdrop-filter: blur(12px);
-      pointer-events: auto;
-    }
-
-    .nav__logo {
-      font-weight: 300;
-      font-size: 0.82rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: #c9a84c;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-    .site-nav.scrolled .nav__logo { opacity: 1; }
-
-    .nav__book {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: #14120c;
-      background: #c9a84c;
-      border: none;
-      padding: 0.6rem 1.6rem;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.5s ease, background 0.3s ease;
-    }
-    .site-nav.scrolled .nav__book { opacity: 1; }
-    .nav__book:hover { background: #e0bc5a; }
+    body { overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; }
 
     /* ════ HERO ═════════════════════════════════════════════════════ */
     .hero {
@@ -222,44 +166,7 @@
     }
     .hero__cta.visible { opacity: 1; }
 
-    .hero__btns {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn-ghost {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e8dcc8;
-      background: transparent;
-      border: 1px solid rgba(201,168,76,0.55);
-      padding: 0.85rem 2.2rem;
-      cursor: pointer;
-      transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
-    }
-    .btn-ghost:hover {
-      background: rgba(201,168,76,0.92);
-      color: #14120c;
-      border-color: rgba(201,168,76,0.92);
-    }
-
-    .btn-solid {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #14120c;
-      background: #c9a84c;
-      border: 1px solid #c9a84c;
-      padding: 0.85rem 2.2rem;
-      cursor: pointer;
-      transition: background 0.4s ease, color 0.4s ease;
-    }
-    .btn-solid:hover { background: #e0bc5a; border-color: #e0bc5a; }
+    .hero__btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
     .scroll-cue__arrow {
       width: 16px;
@@ -269,23 +176,14 @@
       transform: rotate(45deg);
       animation: arrowBounce 2s ease-in-out infinite;
     }
-
     @keyframes arrowBounce {
       0%, 100% { transform: rotate(45deg) translateY(0); }
       50%       { transform: rotate(45deg) translateY(6px); }
     }
 
     /* ════ SCROLL-VIDEO-SEQUENZ ══════════════════════════════════════ */
-    .sequence {
-      position: relative;
-      height: 400vh;
-    }
-
-    .sequence__marker {
-      height: 100vh;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-    }
+    .sequence { position: relative; height: 400vh; }
+    .sequence__marker { height: 100vh; scroll-snap-align: start; scroll-snap-stop: always; }
 
     .stage {
       position: sticky;
@@ -296,14 +194,7 @@
       margin-top: -400vh;
       pointer-events: none;
     }
-
-    .stage video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
     .stage__loop { opacity: 0; z-index: 1; transition: opacity 0.25s ease; }
     .stage__loop.active { opacity: 1; }
@@ -321,9 +212,7 @@
 
     .stage__overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       z-index: 3;
       padding: 0 clamp(1.5rem, 8vw, 8rem) 7%;
       display: flex;
@@ -350,7 +239,6 @@
       line-height: 1.15;
       margin-bottom: 1rem;
     }
-
     .overlay__rule {
       width: clamp(100px, 16vw, 220px);
       height: 0.5px;
@@ -358,7 +246,6 @@
       margin-bottom: 1rem;
       flex-shrink: 0;
     }
-
     .overlay__subtext {
       font-weight: 400;
       font-size: clamp(11px, 1vw, 14px);
@@ -367,70 +254,37 @@
       text-transform: uppercase;
       margin-bottom: 1.4rem;
     }
+    .overlay__btns { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
 
     .overlay__cta {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 0.72rem;
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: #14120c;
-      background: #c9a84c;
-      border: 1px solid #c9a84c;
       padding: 0.75rem 2rem;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      transition: background 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
-    .overlay__cta:hover { background: transparent; color: #c9a84c; }
-
-    /* ════ BEST PRICE GUARANTEE BANNER ══════════════════════════════ */
-    .best-price {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      background: rgba(201,168,76,0.08);
-      border: 1px solid rgba(201,168,76,0.3);
-      padding: 0.9rem 2rem;
-      margin-bottom: clamp(2rem, 5vh, 3.5rem);
-      max-width: 620px;
-      width: 100%;
+    .overlay__cta--solid {
+      color: #14120c;
+      background: #c9a84c;
+      border: 1px solid #c9a84c;
     }
-
-    .best-price__icon {
-      font-size: 1.2rem;
-      flex-shrink: 0;
+    .overlay__cta--solid:hover { background: transparent; color: #c9a84c; }
+    .overlay__cta--ghost {
+      color: #fff;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.55);
     }
-
-    .best-price__text {
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #c9a84c;
-      line-height: 1.5;
-      text-align: left;
-    }
-
-    .best-price__text strong {
-      display: block;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-    }
-
-    .best-price__text span {
-      font-size: 0.66rem;
-      color: rgba(201,168,76,0.7);
-      letter-spacing: 0.14em;
-    }
+    .overlay__cta--ghost:hover { background: rgba(255,255,255,0.12); }
 
     /* ════ PRICING ═══════════════════════════════════════════════════ */
     .pricing {
       position: relative;
       min-height: 100svh;
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07), transparent 60%),
-        #0c0b08;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07), transparent 60%), #0c0b08;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -438,16 +292,7 @@
       padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 6vw, 5rem);
       scroll-snap-align: start;
     }
-
-    .section-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: rgba(201,168,76,0.65);
-      margin-bottom: 1rem;
-    }
-
-    .pricing h2, .booking h2 {
+    .pricing h2 {
       font-weight: 300;
       font-size: clamp(28px, 3.4vw, 48px);
       letter-spacing: 3px;
@@ -455,7 +300,6 @@
       text-align: center;
       margin-bottom: 0.8rem;
     }
-
     .pricing__intro {
       font-size: clamp(13px, 1.05vw, 15px);
       letter-spacing: 1px;
@@ -464,7 +308,6 @@
       max-width: 540px;
       margin-bottom: 1.6rem;
     }
-
     .pricing__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -472,7 +315,6 @@
       width: 100%;
       max-width: 1040px;
     }
-
     .price-card {
       border: 1px solid rgba(201,168,76,0.22);
       background: rgba(255,255,255,0.015);
@@ -483,57 +325,13 @@
       text-align: center;
       transition: border-color 0.4s ease, transform 0.4s ease, background 0.4s ease;
     }
-    .price-card:hover {
-      border-color: rgba(201,168,76,0.6);
-      background: rgba(201,168,76,0.04);
-      transform: translateY(-4px);
-    }
-    .price-card--featured {
-      border-color: rgba(201,168,76,0.55);
-      background: rgba(201,168,76,0.05);
-    }
-
-    .price-card__tag {
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #c9a84c;
-      margin-bottom: 1rem;
-      min-height: 0.9rem;
-    }
-
-    .price-card__name {
-      font-weight: 300;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-      color: #f1e9d8;
-      margin-bottom: 0.4rem;
-    }
-
-    .price-card__price {
-      font-weight: 300;
-      font-size: 2.1rem;
-      color: #c9a84c;
-      margin: 0.8rem 0 0.2rem;
-    }
-
-    .price-card__per {
-      font-size: 0.66rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(232,220,200,0.45);
-      margin-bottom: 1.4rem;
-    }
-
-    .price-card__features {
-      list-style: none;
-      font-size: 0.86rem;
-      letter-spacing: 0.06em;
-      color: rgba(232,220,200,0.72);
-      line-height: 2.1;
-      margin-bottom: 1.8rem;
-    }
-
+    .price-card:hover { border-color: rgba(201,168,76,0.6); background: rgba(201,168,76,0.04); transform: translateY(-4px); }
+    .price-card--featured { border-color: rgba(201,168,76,0.55); background: rgba(201,168,76,0.05); }
+    .price-card__tag { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: #c9a84c; margin-bottom: 1rem; min-height: 0.9rem; }
+    .price-card__name { font-weight: 300; font-size: 1.5rem; letter-spacing: 2px; color: #f1e9d8; margin-bottom: 0.4rem; }
+    .price-card__price { font-weight: 300; font-size: 2.1rem; color: #c9a84c; margin: 0.8rem 0 0.2rem; }
+    .price-card__per { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(232,220,200,0.45); margin-bottom: 1.4rem; }
+    .price-card__features { list-style: none; font-size: 0.86rem; letter-spacing: 0.06em; color: rgba(232,220,200,0.72); line-height: 2.1; margin-bottom: 1.8rem; }
     .price-card__btn {
       margin-top: auto;
       font-family: 'Cormorant Garamond', Georgia, serif;
@@ -550,14 +348,7 @@
     }
     .price-card__btn:hover { background: rgba(201,168,76,0.92); color: #14120c; }
 
-    .pricing__wa-cta {
-      margin-top: clamp(2rem, 5vh, 3rem);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
+    .pricing__wa-cta { margin-top: clamp(2rem, 5vh, 3rem); display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
     .wa-btn {
       display: inline-flex;
       align-items: center;
@@ -575,252 +366,15 @@
       transition: background 0.3s ease;
     }
     .wa-btn:hover { background: #1ebe57; }
-
     .wa-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .pricing__wa-note { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(232,220,200,0.38); }
 
-    .pricing__wa-note {
-      font-size: 0.64rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(232,220,200,0.38);
-    }
-
-    /* ════ BOOKING ═══════════════════════════════════════════════════ */
-    .booking {
-      position: relative;
-      min-height: 100svh;
-      background:
-        linear-gradient(to bottom, rgba(10,10,8,0.88), rgba(10,10,8,0.94)),
-        url('bildhaupt.png') center / cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 6vw, 5rem);
-      scroll-snap-align: start;
-    }
-
-    .booking__sub {
-      font-size: clamp(13px, 1.05vw, 15px);
-      letter-spacing: 1px;
-      color: rgba(232,220,200,0.6);
-      max-width: 480px;
-      margin-bottom: 0.8rem;
-    }
-
-    .booking__reply {
-      font-size: 0.66rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #c9a84c;
-      margin-bottom: 2.4rem;
-    }
-
-    .booking__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-bottom: 3rem;
-    }
-
-    .booking__btn-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: #fff;
-      background: #25D366;
-      border: 1px solid #25D366;
-      padding: 1.05rem 2.8rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .booking__btn-wa:hover { background: #1ebe57; border-color: #1ebe57; }
-    .booking__btn-wa svg { width: 18px; height: 18px; }
-
-    .booking__btn-mail {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: #c9a84c;
-      background: transparent;
-      border: 1px solid rgba(201,168,76,0.5);
-      padding: 1.05rem 2.8rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.4s ease, color 0.4s ease;
-    }
-    .booking__btn-mail:hover { background: rgba(201,168,76,0.12); }
-
-    .booking__divider {
-      width: clamp(120px, 20vw, 260px);
-      height: 1px;
-      background: rgba(201,168,76,0.2);
-      margin-bottom: 2.2rem;
-    }
-
-    .booking__contact {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: clamp(1.2rem, 4vw, 3rem);
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(232,220,200,0.55);
-      margin-bottom: 2rem;
-    }
-
-    .booking__contact a {
-      color: rgba(232,220,200,0.75);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(201,168,76,0.35);
-      padding-bottom: 2px;
-      transition: color 0.3s ease, border-color 0.3s ease;
-    }
-    .booking__contact a:hover { color: #c9a84c; border-color: #c9a84c; }
-
-    .booking__location {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(232,220,200,0.4);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .booking__footer {
-      position: absolute;
-      bottom: 1.6rem;
-      left: 0; right: 0;
-      text-align: center;
-      font-size: 0.62rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: rgba(232,220,200,0.22);
-    }
-
-    /* ════ FLOATING WHATSAPP BUTTON ══════════════════════════════════ */
-    .float-wa {
-      position: fixed;
-      bottom: 1.8rem;
-      right: 1.8rem;
-      z-index: 300;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.5rem;
-    }
-
-    .float-wa__bubble {
-      background: rgba(10,10,8,0.85);
-      border: 1px solid rgba(201,168,76,0.3);
-      color: rgba(232,220,200,0.85);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      padding: 0.55rem 1rem;
-      backdrop-filter: blur(8px);
-      opacity: 0;
-      transform: translateX(8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    .float-wa:hover .float-wa__bubble {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .float-wa__btn {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 4px 18px rgba(37,211,102,0.35);
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .float-wa__btn:hover {
-      background: #1ebe57;
-      transform: scale(1.08);
-      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
-    }
-    .float-wa__btn svg { width: 28px; height: 28px; }
-
-    /* pulse ring */
-    .float-wa__btn::after {
-      content: '';
-      position: absolute;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 2px solid rgba(37,211,102,0.5);
-      animation: waPulse 2.5s ease-out infinite;
-    }
-    @keyframes waPulse {
-      0%   { transform: scale(1); opacity: 0.8; }
-      100% { transform: scale(1.7); opacity: 0; }
-    }
-
-    /* ════ LOADER ═════════════════════════════════════════════════ */
-    #loader {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: #0a0a08;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.1rem;
-      transition: opacity 0.6s ease;
-    }
-    #loader.done { opacity: 0; pointer-events: none; }
-
-    #loader .loader__word {
-      font-weight: 300;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      letter-spacing: 0.24em;
-      color: #c9a84c;
-      text-transform: uppercase;
-    }
-
-    #loader .loader__bar {
-      width: 200px;
-      height: 1px;
-      background: rgba(201,168,76,0.15);
-      overflow: hidden;
-    }
-    #loader .loader__fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(to right, rgba(201,168,76,0.4), #c9a84c);
-      transition: width 0.25s ease-out;
-    }
-
-    #loader .loader__pct {
-      font-size: 0.64rem;
-      letter-spacing: 0.3em;
-      color: rgba(201,168,76,0.4);
-    }
+    .booking { scroll-snap-align: start; }
   </style>
 </head>
 <body>
 
-  <!-- ══ LOADER — wartet nur auf Hero-Video, Rest streamt im Hintergrund ══ -->
+  <!-- ══ LOADER — wartet auf Hero + Whip + erste Loop-Szene, Rest streamt danach ══ -->
   <div id="loader" aria-hidden="true">
     <span class="loader__word">Sāla Khmae</span>
     <div class="loader__bar"><div class="loader__fill" id="loaderFill"></div></div>
@@ -828,8 +382,8 @@
   </div>
 
   <!-- ══ STICKY NAV ════════════════════════════════════════════════ -->
-  <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-    <span class="nav__logo">Sāla Khmae</span>
+  <nav class="site-nav transparent" id="siteNav" aria-label="Main navigation">
+    <a class="nav__logo" href="index.html">Sāla Khmae</a>
     <button class="nav__book" type="button"
       onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
       Book Now
@@ -871,18 +425,22 @@
     <div class="sequence__marker"></div>
 
     <div class="stage" id="stage">
-      <video class="stage__loop" data-scene="0"
+      <!-- Szene 0: Pool -->
+      <video class="stage__loop" data-scene="0" id="loopScene0"
         src="videoscrub3.mp4" poster="pool.png"
         muted loop playsinline preload="auto"></video>
-      <video class="stage__loop" data-scene="1"
+      <!-- Szene 1: Bungalow außen -->
+      <video class="stage__loop" data-scene="1" id="loopScene1"
         src="videoscrub1.mp4" poster="bungalowaussen.png"
-        muted loop playsinline preload="auto"></video>
-      <video class="stage__loop" data-scene="2"
+        muted loop playsinline preload="none"></video>
+      <!-- Szene 2: Bungalow innen -->
+      <video class="stage__loop" data-scene="2" id="loopScene2"
         src="videoscrub2.mp4" poster="Bungalowinnen.png"
-        muted loop playsinline preload="auto"></video>
-      <video class="stage__loop" data-scene="3"
+        muted loop playsinline preload="none"></video>
+      <!-- Szene 3: Restaurant -->
+      <video class="stage__loop" data-scene="3" id="loopScene3"
         src="videoscrub4.mp4" poster="resti.png"
-        muted loop playsinline preload="auto"></video>
+        muted loop playsinline preload="none"></video>
 
       <video class="stage__whip" id="whip"
         src="Dschungl.mp4" muted playsinline preload="auto"></video>
@@ -893,33 +451,46 @@
         <h2 class="overlay__headline">28&deg; &mdash; Warm, Generous, All Yours</h2>
         <div class="overlay__rule"></div>
         <p class="overlay__subtext">Shared pool &middot; Open from sunrise to sunset</p>
-        <a class="overlay__cta"
-          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
-          target="_blank" rel="noopener">Book via WhatsApp</a>
+        <div class="overlay__btns">
+          <a class="overlay__cta overlay__cta--solid"
+            href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+            target="_blank" rel="noopener">Book via WhatsApp</a>
+        </div>
       </div>
+
       <div class="stage__overlay" data-scene="1">
         <h2 class="overlay__headline">Your Private Escape</h2>
         <div class="overlay__rule"></div>
         <p class="overlay__subtext">4 bungalows &middot; Built for two &middot; Surrounded by jungle</p>
-        <a class="overlay__cta"
-          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
-          target="_blank" rel="noopener">Book via WhatsApp</a>
+        <div class="overlay__btns">
+          <a class="overlay__cta overlay__cta--solid" href="zimmer.html">View Rooms</a>
+          <a class="overlay__cta overlay__cta--ghost"
+            href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+            target="_blank" rel="noopener">Book via WhatsApp</a>
+        </div>
       </div>
+
       <div class="stage__overlay" data-scene="2">
         <h2 class="overlay__headline">Wake Up to Jungle Silence</h2>
         <div class="overlay__rule"></div>
         <p class="overlay__subtext">King size bed &middot; Open-air design &middot; Private deck</p>
-        <a class="overlay__cta"
-          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
-          target="_blank" rel="noopener">Book via WhatsApp</a>
+        <div class="overlay__btns">
+          <a class="overlay__cta overlay__cta--solid"
+            href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+            target="_blank" rel="noopener">Book via WhatsApp</a>
+        </div>
       </div>
+
       <div class="stage__overlay" data-scene="3">
         <h2 class="overlay__headline">Dinner Under the Palms</h2>
         <div class="overlay__rule"></div>
         <p class="overlay__subtext">Fresh Khmer cuisine &middot; Open-air dining &middot; Every night</p>
-        <a class="overlay__cta"
-          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
-          target="_blank" rel="noopener">Book via WhatsApp</a>
+        <div class="overlay__btns">
+          <a class="overlay__cta overlay__cta--solid" href="restaurant.html">View Restaurant</a>
+          <a class="overlay__cta overlay__cta--ghost"
+            href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+            target="_blank" rel="noopener">Book via WhatsApp</a>
+        </div>
       </div>
     </div>
   </div>
@@ -933,7 +504,6 @@
       pool access and the quietest jungle in Cambodia.
     </p>
 
-    <!-- Best Price Guarantee -->
     <div class="best-price" role="note" aria-label="Best Price Guarantee">
       <span class="best-price__icon" aria-hidden="true">✦</span>
       <div class="best-price__text">
@@ -1003,23 +573,87 @@
     <span class="section-label">Reservations</span>
     <h2>Book Your Stay</h2>
     <p class="booking__sub">
-      Write us directly &mdash; we answer personally, usually within a few hours.
+      Check real-time availability below, then reserve via form or WhatsApp.
       No booking engines, no fees. Just us.
     </p>
     <p class="booking__reply">✦ We reply within 2 hours</p>
 
-    <div class="booking__actions">
-      <a class="booking__btn-wa"
-        href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
-        target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L0 24l6.335-1.507A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-4.99-1.363l-.358-.213-3.758.893.952-3.656-.233-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
-        WhatsApp
-      </a>
-      <a class="booking__btn-mail"
-        href="mailto:stay@salakhmae.com?subject=Booking%20Request%20%E2%80%94%20S%C4%81la%20Khmae">
-        Email Us
-      </a>
+    <!-- Availability calendar -->
+    <div class="calendar" id="availabilityCalendar">
+      <div class="calendar__head">
+        <button class="calendar__nav calendar__nav--prev" type="button" aria-label="Previous month">&#8249;</button>
+        <span class="calendar__month">—</span>
+        <button class="calendar__nav calendar__nav--next" type="button" aria-label="Next month">&#8250;</button>
+      </div>
+      <div class="calendar__grid"></div>
+      <div class="calendar__legend">
+        <span><i class="open"></i> Open</span>
+        <span><i class="limited"></i> Limited</span>
+        <span><i class="full"></i> Full</span>
+      </div>
+      <p class="calendar__note"></p>
     </div>
+
+    <!-- Booking form (Netlify Forms + WhatsApp fallback) -->
+    <form class="booking-form" id="bookingForm" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="booking" />
+      <p class="booking-form__hp"><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
+
+      <div class="booking-form__row">
+        <div>
+          <label for="bfName">Name</label>
+          <input id="bfName" name="name" type="text" required />
+        </div>
+        <div>
+          <label for="bfEmail">Email</label>
+          <input id="bfEmail" name="email" type="email" required />
+        </div>
+      </div>
+
+      <div class="booking-form__row">
+        <div>
+          <label for="bfCheckin">Check-in</label>
+          <input id="bfCheckin" name="checkin" type="date" required />
+        </div>
+        <div>
+          <label for="bfCheckout">Check-out</label>
+          <input id="bfCheckout" name="checkout" type="date" required />
+        </div>
+      </div>
+
+      <div class="booking-form__row">
+        <div>
+          <label for="bfGuests">Guests</label>
+          <select id="bfGuests" name="guests">
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+          </select>
+        </div>
+        <div>
+          <label for="bfPackage">Package</label>
+          <select id="bfPackage" name="package">
+            <option>Night</option>
+            <option>Week Escape</option>
+            <option>Full Resort</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="bfPhone">Phone (optional)</label>
+      <input id="bfPhone" name="phone" type="tel" />
+
+      <label for="bfMessage">Message</label>
+      <textarea id="bfMessage" name="message" placeholder="Anything else we should know?"></textarea>
+
+      <div class="booking-form__submit-row">
+        <button class="btn-solid" type="submit">Send Booking Request</button>
+        <a class="booking__btn-wa" id="bfWaBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L0 24l6.335-1.507A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-4.99-1.363l-.358-.213-3.758.893.952-3.656-.233-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+          Send via WhatsApp Instead
+        </a>
+      </div>
+      <p class="booking-form__status" id="bfStatus"></p>
+    </form>
 
     <div class="booking__divider"></div>
 
@@ -1050,19 +684,32 @@
     </a>
   </div>
 
+  <script src="common.js" defer></script>
   <script>
-    /* ── Loader: wartet NUR auf Hero-Video (nicht alle Videos) ────
-       Rest (Loop-Szenen, Whip) läuft mit preload="auto" im Hintergrund
-       weiter und ist fertig geladen bevor der User dort ankommt. */
+    /* ── Loader: wartet auf Hero + Whip + erste Loop-Szene (Pool) ──
+       Das sind die 3 Videos, die für einen ruckelfreien Einstieg
+       gebraucht werden. Die übrigen 3 Loop-Videos laden mit
+       preload="none" und werden erst beim Erreichen ihrer Szene
+       via JS nachgeladen (siehe Sequenz-Logik unten) — das hält
+       den Start schnell, ohne dass später etwas fehlt. */
     (function () {
-      const loader = document.getElementById('loader');
-      const fill   = document.getElementById('loaderFill');
-      const pct    = document.getElementById('loaderPct');
-      const hero   = document.getElementById('heroVideo');
-      let done = false;
+      var loader = document.getElementById('loader');
+      var fill   = document.getElementById('loaderFill');
+      var pct    = document.getElementById('loaderPct');
+      var hero   = document.getElementById('heroVideo');
+      var whip   = document.getElementById('whip');
+      var scene0 = document.getElementById('loopScene0');
 
-      function setProgress(p) {
-        const v = Math.max(0, Math.min(100, Math.round(p)));
+      var GATE = [hero, whip, scene0];
+      var GATE_BYTES = [2600000, 115000, 870000]; // ungefähre komprimierte Größen, für gewichteten Fortschritt
+      var totalBytes = GATE_BYTES.reduce(function (a, b) { return a + b; }, 0);
+      var bufferedBytes = GATE_BYTES.map(function () { return 0; });
+      var ready = GATE.map(function () { return false; });
+      var done = false;
+
+      function setProgress() {
+        var sum = bufferedBytes.reduce(function (a, b) { return a + b; }, 0);
+        var v = Math.max(0, Math.min(100, Math.round((sum / totalBytes) * 100)));
         fill.style.width = v + '%';
         pct.textContent = v + '%';
       }
@@ -1070,30 +717,40 @@
       function finish() {
         if (done) return;
         done = true;
-        setProgress(100);
+        fill.style.width = '100%';
+        pct.textContent = '100%';
         setTimeout(function () { loader.classList.add('done'); }, 150);
       }
 
-      // Echter Ladefortschritt über die gepufferten Bytes des Hero-Videos
-      hero.addEventListener('progress', function () {
-        if (!hero.buffered.length || !hero.duration) return;
-        const bufferedEnd = hero.buffered.end(hero.buffered.length - 1);
-        setProgress((bufferedEnd / hero.duration) * 100);
+      function checkAllReady() {
+        if (ready.every(Boolean)) finish();
+      }
+
+      GATE.forEach(function (video, i) {
+        video.addEventListener('progress', function () {
+          if (!video.buffered.length || !video.duration) return;
+          var frac = video.buffered.end(video.buffered.length - 1) / video.duration;
+          bufferedBytes[i] = frac * GATE_BYTES[i];
+          setProgress();
+        });
+        video.addEventListener('canplaythrough', function () {
+          ready[i] = true;
+          bufferedBytes[i] = GATE_BYTES[i];
+          setProgress();
+          checkAllReady();
+        });
       });
 
-      hero.addEventListener('canplaythrough', finish);
-      hero.addEventListener('loadeddata', function () { setProgress(70); });
-
-      // Fallback: nach 4 s auf jeden Fall freigeben (langsame Verbindung)
-      setTimeout(finish, 4000);
+      // Fallback: nach 5 s auf jeden Fall freigeben (langsame Verbindung)
+      setTimeout(finish, 5000);
     })();
 
     /* ── Hero: Logo + CTA nach 5 s ──────────────────────────────── */
     (function () {
-      const video = document.getElementById('heroVideo');
-      const logo  = document.getElementById('heroLogo');
-      const cta   = document.getElementById('heroCta');
-      let shown = false;
+      var video = document.getElementById('heroVideo');
+      var logo  = document.getElementById('heroLogo');
+      var cta   = document.getElementById('heroCta');
+      var shown = false;
 
       function showLogo() {
         if (shown) return;
@@ -1109,45 +766,54 @@
       video.addEventListener('ended', function () { video.pause(); showLogo(); });
     })();
 
-    /* ── Sticky nav nach Hero-Ende ──────────────────────────────── */
-    (function () {
-      const nav  = document.getElementById('siteNav');
-      const hero = document.getElementById('hero');
-      let ticking = false;
-
-      function update() {
-        ticking = false;
-        const heroBottom = hero.getBoundingClientRect().bottom;
-        nav.classList.toggle('scrolled', heroBottom < 80);
-      }
-
-      window.addEventListener('scroll', function () {
-        if (!ticking) { ticking = true; requestAnimationFrame(update); }
-      }, { passive: true });
-    })();
-
     /* ── Scroll-Video-Sequenz ────────────────────────────────────── */
     (function () {
-      const wrapper  = document.getElementById('seq');
-      const whip     = document.getElementById('whip');
-      const loops    = Array.prototype.slice.call(document.querySelectorAll('.stage__loop'));
-      const overlays = Array.prototype.slice.call(document.querySelectorAll('.stage__overlay'));
-      const SCENES   = loops.length;
+      var wrapper  = document.getElementById('seq');
+      var whip     = document.getElementById('whip');
+      var loops    = Array.prototype.slice.call(document.querySelectorAll('.stage__loop'));
+      var overlays = Array.prototype.slice.call(document.querySelectorAll('.stage__overlay'));
+      var SCENES   = loops.length;
 
-      let current = -1, transitioning = false, pending = null,
-          textTimer = null, whipFallback = null;
+      var current = -1, transitioning = false, pending = null, textTimer = null, whipFallback = null;
+      var requested = loops.map(function () { return false; });
+
+      // Szenen 1-3 haben preload="none" — erst laden, sobald wir sie brauchen
+      // (oder kurz davor). Szene 0 lädt schon beim Seitenstart mit preload="auto".
+      function ensureLoaded(i) {
+        if (requested[i]) return;
+        requested[i] = true;
+        if (loops[i].preload !== 'auto') loops[i].preload = 'auto';
+        loops[i].load();
+      }
+      ensureLoaded(0);
 
       function hideAllText() {
         clearTimeout(textTimer);
         overlays.forEach(function (o) { o.classList.remove('visible'); });
       }
 
+      // Startet die Wiedergabe erst, wenn genug gepuffert ist (readyState >= 3),
+      // sonst wird auf 'canplay' gewartet. Verhindert den Stutter beim ersten
+      // Reinscrollen, wenn ein Video noch nicht bereit ist.
+      function playWhenReady(v) {
+        if (v.readyState >= 3) {
+          v.currentTime = 0;
+          v.play().catch(function () {});
+        } else {
+          var onCanPlay = function () {
+            v.removeEventListener('canplay', onCanPlay);
+            v.currentTime = 0;
+            v.play().catch(function () {});
+          };
+          v.addEventListener('canplay', onCanPlay);
+        }
+      }
+
       function activateLoop(scene) {
         loops.forEach(function (v, i) {
           if (i === scene) {
             v.classList.add('active');
-            v.currentTime = 0;
-            v.play().catch(function () {});
+            playWhenReady(v);
           } else {
             v.classList.remove('active');
             if (!v.paused) v.pause();
@@ -1161,9 +827,7 @@
         whip.pause();
         activateLoop(scene);
         textTimer = setTimeout(function () {
-          overlays.forEach(function (o, i) {
-            o.classList.toggle('visible', i === scene);
-          });
+          overlays.forEach(function (o, i) { o.classList.toggle('visible', i === scene); });
         }, 300);
         transitioning = false;
         if (pending !== null && pending !== current) {
@@ -1205,6 +869,11 @@
         }
         var progress = -rect.top / vh;
         var scene = Math.max(0, Math.min(SCENES - 1, Math.round(progress)));
+
+        // Nächste Szene vorab anfordern, sobald wir uns nähern
+        ensureLoaded(scene);
+        if (scene + 1 < SCENES) ensureLoaded(scene + 1);
+
         goTo(scene);
       }
 
