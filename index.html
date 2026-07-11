@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ── -->
+  <title>Sāla Khmae — Boutique Resort Cambodia | Kampot</title>
+  <meta name="description" content="Sāla Khmae is a small boutique resort near Kampot, Cambodia. 4 private bungalows, pool, open-air restaurant. Book direct for the best price — no booking fees." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://salakhmae.com/" />
+
+  <!-- Geo -->
+  <meta name="geo.region" content="KH-7" />
+  <meta name="geo.placename" content="Kampot, Cambodia" />
+  <meta name="geo.position" content="10.6103;104.1818" />
+  <meta name="ICBM" content="10.6103, 104.1818" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sāla Khmae" />
+  <meta property="og:title" content="Sāla Khmae — Boutique Resort Cambodia" />
+  <meta property="og:description" content="4 private bungalows in the Cambodian jungle. Pool, open-air dining, total quiet. Book direct — best price guaranteed." />
+  <meta property="og:image" content="https://salakhmae.com/bildhaupt.png" />
+  <meta property="og:url" content="https://salakhmae.com/" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sāla Khmae — Boutique Resort Cambodia" />
+  <meta name="twitter:description" content="4 private jungle bungalows near Kampot. Book direct for best price." />
+  <meta name="twitter:image" content="https://salakhmae.com/bildhaupt.png" />
+
+  <!-- Schema.org — Hotel / LodgingBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Sāla Khmae",
+    "description": "Small boutique resort with 4 private bungalows near Kampot, Cambodia. Pool, open-air restaurant, surrounded by jungle.",
+    "url": "https://salakhmae.com",
+    "telephone": "+85512345678",
+    "email": "stay@salakhmae.com",
+    "image": "https://salakhmae.com/bildhaupt.png",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kampot",
+      "addressCountry": "KH"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 10.6103,
+      "longitude": 104.1818
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Breakfast", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Private Deck", "value": true }
+    ],
+    "numberOfRooms": 4,
+    "checkinTime": "14:00",
+    "checkoutTime": "11:00",
+    "sameAs": [
+      "https://instagram.com/salakhmae"
+    ]
+  }
+  </script>
+
+  <!-- Fontsource via jsDelivr (kein Google CDN), non-blocking -->
+  <link rel="preload" as="style"
+    href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/300.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" as="style"
+    href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/400.css"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/300.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/400.css" />
+  </noscript>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      background: #0a0a08;
+      color: #e8dcc8;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    /* ════ STICKY NAV ══════════════════════════════════════════════ */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.2rem, 4vw, 3rem);
+      background: rgba(10,10,8,0);
+      backdrop-filter: blur(0px);
+      transition: background 0.5s ease, backdrop-filter 0.5s ease;
+      pointer-events: none;
+    }
+    .site-nav.scrolled {
+      background: rgba(10,10,8,0.88);
+      backdrop-filter: blur(12px);
+      pointer-events: auto;
+    }
+
+    .nav__logo {
+      font-weight: 300;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .site-nav.scrolled .nav__logo { opacity: 1; }
+
+    .nav__book {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #14120c;
+      background: #c9a84c;
+      border: none;
+      padding: 0.6rem 1.6rem;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.5s ease, background 0.3s ease;
+    }
+    .site-nav.scrolled .nav__book { opacity: 1; }
+    .nav__book:hover { background: #e0bc5a; }
+
+    /* ════ HERO ═════════════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 600px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .hero__video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero__vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.45) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 35%, transparent 60%, rgba(0,0,0,0.55) 100%);
+      pointer-events: none;
+    }
+
+    .hero__logo {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      pointer-events: none;
+    }
+    .hero__logo.visible { opacity: 1; }
+
+    .logo-mark {
+      letter-spacing: 0.22em;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: #c9a84c;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.6);
+      text-transform: uppercase;
+    }
+
+    .logo-rule {
+      width: clamp(160px, 24vw, 320px);
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.7), transparent);
+      margin: 0.65rem 0 0.55rem;
+    }
+
+    .logo-sub {
+      font-weight: 400;
+      font-size: clamp(0.6rem, 1.1vw, 0.82rem);
+      letter-spacing: 0.32em;
+      color: rgba(201,168,76,0.78);
+      text-transform: uppercase;
+    }
+
+    .hero__cta {
+      position: absolute;
+      bottom: 2.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero__cta.visible { opacity: 1; }
+
+    .hero__btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-ghost {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #e8dcc8;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.55);
+      padding: 0.85rem 2.2rem;
+      cursor: pointer;
+      transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+    }
+    .btn-ghost:hover {
+      background: rgba(201,168,76,0.92);
+      color: #14120c;
+      border-color: rgba(201,168,76,0.92);
+    }
+
+    .btn-solid {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #14120c;
+      background: #c9a84c;
+      border: 1px solid #c9a84c;
+      padding: 0.85rem 2.2rem;
+      cursor: pointer;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    .btn-solid:hover { background: #e0bc5a; border-color: #e0bc5a; }
+
+    .scroll-cue__arrow {
+      width: 16px;
+      height: 16px;
+      border-right: 1px solid rgba(201,168,76,0.55);
+      border-bottom: 1px solid rgba(201,168,76,0.55);
+      transform: rotate(45deg);
+      animation: arrowBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes arrowBounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ════ SCROLL-VIDEO-SEQUENZ ══════════════════════════════════════ */
+    .sequence {
+      position: relative;
+      height: 400vh;
+    }
+
+    .sequence__marker {
+      height: 100vh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .stage {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      margin-top: -400vh;
+      pointer-events: none;
+    }
+
+    .stage video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stage__loop { opacity: 0; z-index: 1; transition: opacity 0.25s ease; }
+    .stage__loop.active { opacity: 1; }
+
+    .stage__whip { opacity: 0; z-index: 5; }
+    .stage__whip.playing { opacity: 1; }
+
+    .stage__gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 40%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .stage__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: 0 clamp(1.5rem, 8vw, 8rem) 7%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+    }
+    .stage__overlay.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: auto;
+    }
+
+    .overlay__headline {
+      font-weight: 300;
+      font-size: clamp(32px, 4vw, 58px);
+      letter-spacing: 4px;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .overlay__rule {
+      width: clamp(100px, 16vw, 220px);
+      height: 0.5px;
+      background: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+
+    .overlay__subtext {
+      font-weight: 400;
+      font-size: clamp(11px, 1vw, 14px);
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .overlay__cta {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #14120c;
+      background: #c9a84c;
+      border: 1px solid #c9a84c;
+      padding: 0.75rem 2rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .overlay__cta:hover { background: transparent; color: #c9a84c; }
+
+    /* ════ BEST PRICE GUARANTEE BANNER ══════════════════════════════ */
+    .best-price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.9rem 2rem;
+      margin-bottom: clamp(2rem, 5vh, 3.5rem);
+      max-width: 620px;
+      width: 100%;
+    }
+
+    .best-price__icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .best-price__text {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .best-price__text strong {
+      display: block;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+    }
+
+    .best-price__text span {
+      font-size: 0.66rem;
+      color: rgba(201,168,76,0.7);
+      letter-spacing: 0.14em;
+    }
+
+    /* ════ PRICING ═══════════════════════════════════════════════════ */
+    .pricing {
+      position: relative;
+      min-height: 100svh;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07), transparent 60%),
+        #0c0b08;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 6vw, 5rem);
+      scroll-snap-align: start;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.65);
+      margin-bottom: 1rem;
+    }
+
+    .pricing h2, .booking h2 {
+      font-weight: 300;
+      font-size: clamp(28px, 3.4vw, 48px);
+      letter-spacing: 3px;
+      color: #f1e9d8;
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .pricing__intro {
+      font-size: clamp(13px, 1.05vw, 15px);
+      letter-spacing: 1px;
+      color: rgba(232,220,200,0.6);
+      text-align: center;
+      max-width: 540px;
+      margin-bottom: 1.6rem;
+    }
+
+    .pricing__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.4rem;
+      width: 100%;
+      max-width: 1040px;
+    }
+
+    .price-card {
+      border: 1px solid rgba(201,168,76,0.22);
+      background: rgba(255,255,255,0.015);
+      padding: 2.2rem 1.6rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: border-color 0.4s ease, transform 0.4s ease, background 0.4s ease;
+    }
+    .price-card:hover {
+      border-color: rgba(201,168,76,0.6);
+      background: rgba(201,168,76,0.04);
+      transform: translateY(-4px);
+    }
+    .price-card--featured {
+      border-color: rgba(201,168,76,0.55);
+      background: rgba(201,168,76,0.05);
+    }
+
+    .price-card__tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 1rem;
+      min-height: 0.9rem;
+    }
+
+    .price-card__name {
+      font-weight: 300;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: #f1e9d8;
+      margin-bottom: 0.4rem;
+    }
+
+    .price-card__price {
+      font-weight: 300;
+      font-size: 2.1rem;
+      color: #c9a84c;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .price-card__per {
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(232,220,200,0.45);
+      margin-bottom: 1.4rem;
+    }
+
+    .price-card__features {
+      list-style: none;
+      font-size: 0.86rem;
+      letter-spacing: 0.06em;
+      color: rgba(232,220,200,0.72);
+      line-height: 2.1;
+      margin-bottom: 1.8rem;
+    }
+
+    .price-card__btn {
+      margin-top: auto;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #e8dcc8;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.45);
+      padding: 0.75rem 1.9rem;
+      cursor: pointer;
+      transition: background 0.4s ease, color 0.4s ease;
+      width: 100%;
+    }
+    .price-card__btn:hover { background: rgba(201,168,76,0.92); color: #14120c; }
+
+    .pricing__wa-cta {
+      margin-top: clamp(2rem, 5vh, 3rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #25D366;
+      border: none;
+      padding: 1rem 2.6rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .wa-btn:hover { background: #1ebe57; }
+
+    .wa-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .pricing__wa-note {
+      font-size: 0.64rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232,220,200,0.38);
+    }
+
+    /* ════ BOOKING ═══════════════════════════════════════════════════ */
+    .booking {
+      position: relative;
+      min-height: 100svh;
+      background:
+        linear-gradient(to bottom, rgba(10,10,8,0.88), rgba(10,10,8,0.94)),
+        url('bildhaupt.png') center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 6vw, 5rem);
+      scroll-snap-align: start;
+    }
+
+    .booking__sub {
+      font-size: clamp(13px, 1.05vw, 15px);
+      letter-spacing: 1px;
+      color: rgba(232,220,200,0.6);
+      max-width: 480px;
+      margin-bottom: 0.8rem;
+    }
+
+    .booking__reply {
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 2.4rem;
+    }
+
+    .booking__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .booking__btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #25D366;
+      border: 1px solid #25D366;
+      padding: 1.05rem 2.8rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .booking__btn-wa:hover { background: #1ebe57; border-color: #1ebe57; }
+    .booking__btn-wa svg { width: 18px; height: 18px; }
+
+    .booking__btn-mail {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.5);
+      padding: 1.05rem 2.8rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    .booking__btn-mail:hover { background: rgba(201,168,76,0.12); }
+
+    .booking__divider {
+      width: clamp(120px, 20vw, 260px);
+      height: 1px;
+      background: rgba(201,168,76,0.2);
+      margin-bottom: 2.2rem;
+    }
+
+    .booking__contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(1.2rem, 4vw, 3rem);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(232,220,200,0.55);
+      margin-bottom: 2rem;
+    }
+
+    .booking__contact a {
+      color: rgba(232,220,200,0.75);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.35);
+      padding-bottom: 2px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .booking__contact a:hover { color: #c9a84c; border-color: #c9a84c; }
+
+    .booking__location {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(232,220,200,0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .booking__footer {
+      position: absolute;
+      bottom: 1.6rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 0.62rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(232,220,200,0.22);
+    }
+
+    /* ════ FLOATING WHATSAPP BUTTON ══════════════════════════════════ */
+    .float-wa {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      z-index: 300;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .float-wa__bubble {
+      background: rgba(10,10,8,0.85);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: rgba(232,220,200,0.85);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      padding: 0.55rem 1rem;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transform: translateX(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .float-wa:hover .float-wa__bubble {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .float-wa__btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.35);
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .float-wa__btn:hover {
+      background: #1ebe57;
+      transform: scale(1.08);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+    }
+    .float-wa__btn svg { width: 28px; height: 28px; }
+
+    /* pulse ring */
+    .float-wa__btn::after {
+      content: '';
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid rgba(37,211,102,0.5);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ STICKY NAV ════════════════════════════════════════════════ -->
+  <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+    <span class="nav__logo">Sāla Khmae</span>
+    <button class="nav__book" type="button"
+      onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+      Book Now
+    </button>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <video class="hero__video" id="heroVideo"
+      src="videohero.mp4" autoplay muted playsinline preload="auto"></video>
+    <div class="hero__vignette"></div>
+
+    <div class="hero__logo" id="heroLogo" aria-label="Sāla Khmae">
+      <span class="logo-mark">Sāla Khmae</span>
+      <div class="logo-rule"></div>
+      <span class="logo-sub">Cambodia &middot; Boutique Resort</span>
+    </div>
+
+    <div class="hero__cta" id="heroCta">
+      <div class="hero__btns">
+        <button class="btn-solid" type="button"
+          onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+          Book Direct
+        </button>
+        <button class="btn-ghost" type="button"
+          onclick="document.getElementById('seq').scrollIntoView({behavior:'smooth'})">
+          Discover the Resort
+        </button>
+      </div>
+      <div class="scroll-cue__arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══ SCROLL-VIDEO-SEQUENZ ══════════════════════════════════════ -->
+  <div class="sequence" id="seq">
+    <div class="sequence__marker"></div>
+    <div class="sequence__marker"></div>
+    <div class="sequence__marker"></div>
+    <div class="sequence__marker"></div>
+
+    <div class="stage" id="stage">
+      <video class="stage__loop" data-scene="0"
+        src="videoscrub3.mp4" poster="pool.png"
+        muted loop playsinline preload="auto"></video>
+      <video class="stage__loop" data-scene="1"
+        src="videoscrub1.mp4" poster="bungalowaussen.png"
+        muted loop playsinline preload="auto"></video>
+      <video class="stage__loop" data-scene="2"
+        src="videoscrub2.mp4" poster="Bungalowinnen.png"
+        muted loop playsinline preload="auto"></video>
+      <video class="stage__loop" data-scene="3"
+        src="videoscrub4.mp4" poster="resti.png"
+        muted loop playsinline preload="auto"></video>
+
+      <video class="stage__whip" id="whip"
+        src="Dschungl.mp4" muted playsinline preload="auto"></video>
+
+      <div class="stage__gradient"></div>
+
+      <div class="stage__overlay" data-scene="0">
+        <h2 class="overlay__headline">28&deg; &mdash; Warm, Generous, All Yours</h2>
+        <div class="overlay__rule"></div>
+        <p class="overlay__subtext">Shared pool &middot; Open from sunrise to sunset</p>
+        <a class="overlay__cta"
+          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+          target="_blank" rel="noopener">Book via WhatsApp</a>
+      </div>
+      <div class="stage__overlay" data-scene="1">
+        <h2 class="overlay__headline">Your Private Escape</h2>
+        <div class="overlay__rule"></div>
+        <p class="overlay__subtext">4 bungalows &middot; Built for two &middot; Surrounded by jungle</p>
+        <a class="overlay__cta"
+          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+          target="_blank" rel="noopener">Book via WhatsApp</a>
+      </div>
+      <div class="stage__overlay" data-scene="2">
+        <h2 class="overlay__headline">Wake Up to Jungle Silence</h2>
+        <div class="overlay__rule"></div>
+        <p class="overlay__subtext">King size bed &middot; Open-air design &middot; Private deck</p>
+        <a class="overlay__cta"
+          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+          target="_blank" rel="noopener">Book via WhatsApp</a>
+      </div>
+      <div class="stage__overlay" data-scene="3">
+        <h2 class="overlay__headline">Dinner Under the Palms</h2>
+        <div class="overlay__rule"></div>
+        <p class="overlay__subtext">Fresh Khmer cuisine &middot; Open-air dining &middot; Every night</p>
+        <a class="overlay__cta"
+          href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+          target="_blank" rel="noopener">Book via WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PRICING ═══════════════════════════════════════════════════ -->
+  <section class="pricing" id="pricing">
+    <span class="section-label">Rates &amp; Packages</span>
+    <h2>Stay With Us</h2>
+    <p class="pricing__intro">
+      Four bungalows. Honest prices. Every stay includes breakfast,
+      pool access and the quietest jungle in Cambodia.
+    </p>
+
+    <!-- Best Price Guarantee -->
+    <div class="best-price" role="note" aria-label="Best Price Guarantee">
+      <span class="best-price__icon" aria-hidden="true">✦</span>
+      <div class="best-price__text">
+        <strong>Best Price Guaranteed — Book Direct</strong>
+        <span>No middlemen. No booking fees. What you see is what you pay.</span>
+      </div>
+    </div>
+
+    <div class="pricing__grid">
+      <div class="price-card">
+        <span class="price-card__tag"></span>
+        <h3 class="price-card__name">Night</h3>
+        <div class="price-card__price">$95</div>
+        <div class="price-card__per">per bungalow / night</div>
+        <ul class="price-card__features">
+          <li>Private bungalow for two</li>
+          <li>Daily Khmer breakfast</li>
+          <li>Pool access</li>
+        </ul>
+        <button class="price-card__btn" type="button"
+          onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Reserve</button>
+      </div>
+
+      <div class="price-card price-card--featured">
+        <span class="price-card__tag">Most loved</span>
+        <h3 class="price-card__name">Week Escape</h3>
+        <div class="price-card__price">$560</div>
+        <div class="price-card__per">7 nights / bungalow</div>
+        <ul class="price-card__features">
+          <li>One night free</li>
+          <li>Daily Khmer breakfast</li>
+          <li>One sunset dinner included</li>
+          <li>Airport pick-up</li>
+        </ul>
+        <button class="price-card__btn" type="button"
+          onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Reserve</button>
+      </div>
+
+      <div class="price-card">
+        <span class="price-card__tag"></span>
+        <h3 class="price-card__name">Full Resort</h3>
+        <div class="price-card__price">$340</div>
+        <div class="price-card__per">all 4 bungalows / night</div>
+        <ul class="price-card__features">
+          <li>The whole resort, just you</li>
+          <li>Up to 8 guests</li>
+          <li>Private chef on request</li>
+        </ul>
+        <button class="price-card__btn" type="button"
+          onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Reserve</button>
+      </div>
+    </div>
+
+    <div class="pricing__wa-cta">
+      <a class="wa-btn"
+        href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20like%20to%20check%20availability%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+        target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L0 24l6.335-1.507A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-4.99-1.363l-.358-.213-3.758.893.952-3.656-.233-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+        Check Availability on WhatsApp
+      </a>
+      <span class="pricing__wa-note">We reply within 2 hours</span>
+    </div>
+  </section>
+
+  <!-- ══ BOOKING / KONTAKT ══════════════════════════════════════════ -->
+  <section class="booking" id="booking">
+    <span class="section-label">Reservations</span>
+    <h2>Book Your Stay</h2>
+    <p class="booking__sub">
+      Write us directly &mdash; we answer personally, usually within a few hours.
+      No booking engines, no fees. Just us.
+    </p>
+    <p class="booking__reply">✦ We reply within 2 hours</p>
+
+    <div class="booking__actions">
+      <a class="booking__btn-wa"
+        href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+        target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L0 24l6.335-1.507A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-4.99-1.363l-.358-.213-3.758.893.952-3.656-.233-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+        WhatsApp
+      </a>
+      <a class="booking__btn-mail"
+        href="mailto:stay@salakhmae.com?subject=Booking%20Request%20%E2%80%94%20S%C4%81la%20Khmae">
+        Email Us
+      </a>
+    </div>
+
+    <div class="booking__divider"></div>
+
+    <div class="booking__contact">
+      <a href="mailto:stay@salakhmae.com">stay@salakhmae.com</a>
+      <a href="tel:+85512345678">+855 12 345 678</a>
+      <a href="https://instagram.com/salakhmae" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://maps.google.com/?q=Kampot+Cambodia" target="_blank" rel="noopener">Find Us</a>
+    </div>
+
+    <div class="booking__location">
+      <span aria-hidden="true">📍</span>
+      Kampot Province, Cambodia
+    </div>
+
+    <div class="booking__footer">
+      S&#256;la Khmae &middot; Kampot, Cambodia &middot; &copy; 2025
+    </div>
+  </section>
+
+  <!-- ══ FLOATING WHATSAPP ══════════════════════════════════════════ -->
+  <div class="float-wa" role="complementary" aria-label="Quick WhatsApp contact">
+    <div class="float-wa__bubble">Questions? We reply within 2h</div>
+    <a class="float-wa__btn"
+      href="https://wa.me/85512345678?text=Hi%2C%20I%27d%20love%20to%20book%20a%20stay%20at%20S%C4%81la%20Khmae%20%E2%80%94%20can%20you%20help%20me%3F"
+      target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.858L0 24l6.335-1.507A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-4.99-1.363l-.358-.213-3.758.893.952-3.656-.233-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    /* ── Hero: Logo + CTA nach 5 s ──────────────────────────────── */
+    (function () {
+      const video = document.getElementById('heroVideo');
+      const logo  = document.getElementById('heroLogo');
+      const cta   = document.getElementById('heroCta');
+      let shown = false;
+
+      function showLogo() {
+        if (shown) return;
+        shown = true;
+        logo.classList.add('visible');
+        cta.classList.add('visible');
+      }
+
+      video.addEventListener('timeupdate', function () {
+        if (video.currentTime >= 5) showLogo();
+      });
+      setTimeout(showLogo, 5200);
+      video.addEventListener('ended', function () { video.pause(); showLogo(); });
+    })();
+
+    /* ── Sticky nav nach Hero-Ende ──────────────────────────────── */
+    (function () {
+      const nav  = document.getElementById('siteNav');
+      const hero = document.getElementById('hero');
+      let ticking = false;
+
+      function update() {
+        ticking = false;
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        nav.classList.toggle('scrolled', heroBottom < 80);
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }, { passive: true });
+    })();
+
+    /* ── Scroll-Video-Sequenz ────────────────────────────────────── */
+    (function () {
+      const wrapper  = document.getElementById('seq');
+      const whip     = document.getElementById('whip');
+      const loops    = Array.prototype.slice.call(document.querySelectorAll('.stage__loop'));
+      const overlays = Array.prototype.slice.call(document.querySelectorAll('.stage__overlay'));
+      const SCENES   = loops.length;
+
+      let current = -1, transitioning = false, pending = null,
+          textTimer = null, whipFallback = null;
+
+      function hideAllText() {
+        clearTimeout(textTimer);
+        overlays.forEach(function (o) { o.classList.remove('visible'); });
+      }
+
+      function activateLoop(scene) {
+        loops.forEach(function (v, i) {
+          if (i === scene) {
+            v.classList.add('active');
+            v.currentTime = 0;
+            v.play().catch(function () {});
+          } else {
+            v.classList.remove('active');
+            if (!v.paused) v.pause();
+          }
+        });
+      }
+
+      function finishWhip(scene) {
+        clearTimeout(whipFallback);
+        whip.classList.remove('playing');
+        whip.pause();
+        activateLoop(scene);
+        textTimer = setTimeout(function () {
+          overlays.forEach(function (o, i) {
+            o.classList.toggle('visible', i === scene);
+          });
+        }, 300);
+        transitioning = false;
+        if (pending !== null && pending !== current) {
+          var next = pending; pending = null; goTo(next);
+        }
+      }
+
+      function goTo(scene) {
+        if (scene === current) return;
+        if (transitioning) { pending = scene; return; }
+        transitioning = true;
+        current = scene;
+        hideAllText();
+        whip.currentTime = 0;
+        whip.classList.add('playing');
+        whip.play().catch(function () { finishWhip(scene); });
+
+        function onEnded() { whip.removeEventListener('ended', onEnded); finishWhip(scene); }
+        whip.addEventListener('ended', onEnded);
+        whipFallback = setTimeout(function () {
+          whip.removeEventListener('ended', onEnded); finishWhip(scene);
+        }, 700);
+      }
+
+      function leaveSequence() {
+        hideAllText();
+        loops.forEach(function (v) { if (!v.paused) v.pause(); });
+        current = -1;
+      }
+
+      var ticking = false;
+      function update() {
+        ticking = false;
+        var vh = window.innerHeight;
+        var rect = wrapper.getBoundingClientRect();
+        if (rect.top > vh * 0.5 || rect.bottom < vh * 0.5) {
+          if (current !== -1) leaveSequence();
+          return;
+        }
+        var progress = -rect.top / vh;
+        var scene = Math.max(0, Math.min(SCENES - 1, Math.round(progress)));
+        goTo(scene);
+      }
+
+      function onScroll() {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    })();
+  </script>
+
+</body>
+</html>
